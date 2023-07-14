@@ -1,21 +1,11 @@
 import Image from 'next/image'
 import Link from 'next/link'
+import Navigation from './navigation'
 
 export default function Home() {
   return (
     <div style={{ textAlign: 'center' }}>
-      <nav className="p-4">
-        <img
-          src="./ultmt-icon.png"
-          alt="Ultimate App Icon"
-          width={60}
-          height={60}
-          style={{ borderRadius: 30 }}
-        />
-        <h1>The Ultmt App</h1>
-        <Link className="link" href="/privacy">Privacy</Link>
-        <Link className="link" href="/account-services">Account Services</Link>
-      </nav>
+      <Navigation />
       <main className="flex min-h-screen flex-col items-center p-8">
         <a href="https://www.apple.com/app-store/">
           <Image

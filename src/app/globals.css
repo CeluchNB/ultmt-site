@@ -51,3 +51,25 @@ p, li {
 strong {
   color: #ffd600;
 }
+
+label {
+  display: block;
+  color: #ffd600;
+}
+
+input { 
+  display: block;
+  border: #ffd600 1px solid;
+  background-color: #303030;
+  border-radius: 4px;
+  padding: 4px;
+  margin-bottom: 4px;
+  color: #ffd600;
+}
+
+input:focus {
+  outline-color: #3183ff;
+  border-color: #3183ff;
+  outline-style: solid;
+  outline-width: 1px;
+}
