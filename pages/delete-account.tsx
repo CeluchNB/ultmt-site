@@ -41,7 +41,7 @@ export default function DeleteAccount() {
             <Navigation />
             <div style={{ display: 'flex', alignItems: 'center' }}>
                 <div>
-                    <form onSubmit={handleSubmit}>
+                    <form onSubmit={handleSubmit} role="form">
                         <label htmlFor="username">Username</label>
                         <input id="username" name="username" type="text" />
                         <label htmlFor="password">Password</label>
