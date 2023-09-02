@@ -1,5 +1,6 @@
+import React from 'react'
 import { render, screen } from '@testing-library/react'
-import Privacy from '../privacy'
+import Privacy from '../pages/privacy'
 
 describe('Privacy', () => {
     it('renders', () => {

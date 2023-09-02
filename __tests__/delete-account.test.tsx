@@ -1,7 +1,7 @@
+import React from 'react'
 import { render, screen, waitFor } from '@testing-library/react'
-import DeleteAccount from '../delete-account'
+import DeleteAccount from '../pages/delete-account'
 import fetchMock from 'jest-fetch-mock'
-import userEvent from '@testing-library/user-event'
 
 describe('DeleteAccount', () => {
     beforeAll(() => {
