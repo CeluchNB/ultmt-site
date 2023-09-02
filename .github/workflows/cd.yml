@@ -26,8 +26,20 @@ jobs:
             echo "env_name=dev" >> $GITHUB_OUTPUT
           fi
 
+  run-tests:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check Out Repo 
+        uses: actions/checkout@v3
+
+      - name: Install Dependencies
+        run: yarn install --frozen-lockfile
+      
+      - name: Run tests
+        run: yarn test
+  
   deploy:
-    needs: [get-environment]
+    needs: [get-environment, run-tests]
     runs-on: ubuntu-latest
     environment:
       name: ${{ needs.get-environment.outputs.env_name }}
