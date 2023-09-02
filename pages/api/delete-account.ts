@@ -2,7 +2,7 @@
 export default async function handler(req: any, res: any) {
     try {
         const apiUrl = process.env.API_URL;
-        const apiKey = process.env.API_KEY || '';
+        const apiKey = process.env.API_KEY ?? '';
         // get token by logging in
         const jsonBody = JSON.stringify(req.body)
         const loginResponse = await fetch(`${apiUrl}/api/v1/auth/login`, { 
