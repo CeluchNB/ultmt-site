@@ -8,5 +8,6 @@ describe('Page', () => {
 
         expect(screen.getByTestId('app-store')).toBeTruthy()
         expect(screen.getByTestId('google-play')).toBeTruthy()
+        expect(screen.getByTestId('bmc-button')).toBeTruthy()
     })
 });
