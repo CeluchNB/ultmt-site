@@ -50,8 +50,8 @@ export default function DeleteAccount() {
                     </form>
                 </div>
                 <p style={{ color: statusTextColor }}>{statusText}</p>
-                <p>Deleting your account removes your data immediately, but your name will still appear on games and statistics as if you were added as a guest.</p>
-                <p>Need more help? Email <Link style={{ margin: 0 }} href="mailto:developer@theultmtapp.com" className="link">developer@theultmtapp.com</Link></p>
+                <p className="m-1">Deleting your account removes your data immediately, but your name will still appear on games and statistics as if you were added as a guest.</p>
+                <p className="m-1">Need more help? Email <Link style={{ margin: 0 }} href="mailto:developer@theultmtapp.com" className="link">developer@theultmtapp.com</Link></p>
             </div>
         </div>
     )
