@@ -7,8 +7,11 @@ export default function VerificationRequest() {
 
     const verificationId = searchParams?.get('id')
     const [response, setResponse] = useState<'approved' | 'denied'>('denied')
+    const [message, setMessage] = useState('')
+    const [statusTextColor, setStatusTextColor] = useState('#00ff00')
 
     const handleSubmit = async (event: any) => {
+        setMessage('')
         event.preventDefault()
         const data = {
             response,
@@ -24,7 +27,19 @@ export default function VerificationRequest() {
             body: JSON.stringify(data),
         }
 
-        await fetch('/api/verify-request', options)
+
+        const apiResponse = await fetch('/api/verify-request', options)
+        if (apiResponse.status === 200) {
+            setMessage('Success')
+            setStatusTextColor('#00ff00')
+        } else {
+            setMessage(`Error: ${apiResponse.status}`)
+            setStatusTextColor('#ff0000')
+        }
+        
+
+        event.target.verificationId.value = ''
+        event.target.password.value = ''
     }
 
     return (
@@ -54,6 +69,7 @@ export default function VerificationRequest() {
                 <input id="password" name="password" type="password" />
                 <button style={{ backgroundColor: '#3183ff', color: 'white', borderRadius: 5, padding: 5, justifySelf: 'center' }}>Respond</button>
             </form>
+            <p style={{ color: statusTextColor }}>{message}</p>
             </div>
         </div>
     )
