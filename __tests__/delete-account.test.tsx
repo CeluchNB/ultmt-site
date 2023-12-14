@@ -1,5 +1,5 @@
 import React from 'react'
-import { render, screen, waitFor } from '@testing-library/react'
+import { render, screen } from '@testing-library/react'
 import DeleteAccount from '../pages/delete-account'
 import fetchMock from 'jest-fetch-mock'
 
