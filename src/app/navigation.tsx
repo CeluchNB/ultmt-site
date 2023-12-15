@@ -5,7 +5,7 @@ export default function Navigation() {
         <nav className="p-4 flex flex-col sm:flex-row text-center">
             <Link href="/" className="flex">
                 <img
-                    src="./ultmt-icon.png"
+                    src="/ultmt-icon.png"
                     alt="Ultimate App Icon"
                     width={60}
                     height={60}
