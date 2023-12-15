@@ -12,10 +12,15 @@ describe('Delete Account API', () => {
     it('handles success', async () => {
         const json = jest.fn()
         const res = {
-            status: jest.fn().mockReturnValue({ json })
+            status: jest.fn().mockReturnValue({ json }),
         }
-        fetchMock.mockResponseOnce(() => Promise.resolve({ body: '{ "tokens": { "access": "token" }}' }))
-        await deleteAccount({ body: { email: 'noah', password: 'Pass1234!' }}, res)
+        fetchMock.mockResponseOnce(() =>
+            Promise.resolve({ body: '{ "tokens": { "access": "token" }}' }),
+        )
+        await deleteAccount(
+            { body: { email: 'noah', password: 'Pass1234!' } },
+            res,
+        )
 
         expect(res.status).toHaveBeenCalledWith(200)
         expect(json).toHaveBeenCalled()
@@ -24,11 +29,14 @@ describe('Delete Account API', () => {
     it('handles failure', async () => {
         const json = jest.fn()
         const res = {
-            status: jest.fn().mockReturnValue({ json })
+            status: jest.fn().mockReturnValue({ json }),
         }
         fetchMock.mockResponseOnce(() => Promise.resolve({ body: 'badjson' }))
 
-        await deleteAccount({ body: { email: 'noah', password: 'Pass1234!' }}, res)
+        await deleteAccount(
+            { body: { email: 'noah', password: 'Pass1234!' } },
+            res,
+        )
 
         expect(res.status).toHaveBeenCalledWith(400)
         expect(json).toHaveBeenCalled()

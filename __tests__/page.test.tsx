@@ -10,4 +10,4 @@ describe('Page', () => {
         expect(screen.getByTestId('google-play')).toBeTruthy()
         expect(screen.getByTestId('bmc-button')).toBeTruthy()
     })
-});
+})

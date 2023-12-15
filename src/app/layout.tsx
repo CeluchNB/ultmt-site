@@ -4,18 +4,18 @@ import './globals.css'
 // const inter = Inter({ subsets: ['latin'] })
 
 export const metadata = {
-  title: 'The Ultmt App',
-  description: 'An app for Ultimate',
+    title: 'The Ultmt App',
+    description: 'An app for Ultimate',
 }
 
 export default function RootLayout({
-  children,
+    children,
 }: {
-  children: React.ReactNode
+    children: React.ReactNode
 }) {
-  return (
-    <html lang="en">
-      <body>{children}</body>
-    </html>
-  )
+    return (
+        <html lang="en">
+            <body>{children}</body>
+        </html>
+    )
 }
