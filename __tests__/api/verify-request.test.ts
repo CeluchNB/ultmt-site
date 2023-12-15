@@ -1,5 +1,5 @@
 import fetchMock from 'jest-fetch-mock'
-import verifyRequest from '../pages/api/verify-request'
+import verifyRequest from '../../pages/api/verify-request'
 
 describe('test Verify Request API', () => {
     beforeAll(() => {

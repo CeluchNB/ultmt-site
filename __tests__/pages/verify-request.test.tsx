@@ -1,6 +1,6 @@
 import React from 'react'
 import { render, screen } from '@testing-library/react'
-import VerifyRequest from '../pages/admin/verify-request'
+import VerifyRequest from '../../pages/admin/verify-request'
 import fetchMock from 'jest-fetch-mock'
 
 describe('VerifyRequest', () => {

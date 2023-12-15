@@ -2,7 +2,6 @@ import { login } from '@/utils/network'
 
 export default async function handler(req: any, res: any) {
     try {
-        console.log('in', req.body)
         const apiUrl = process.env.API_URL
         const apiKey = process.env.API_KEY ?? ''
 

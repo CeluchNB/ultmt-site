@@ -1,4 +1,4 @@
-import deleteAccount from '../pages/api/delete-account'
+import deleteAccount from '../../pages/api/delete-account'
 import fetchMock from 'jest-fetch-mock'
 
 describe('Delete Account API', () => {
