@@ -15,11 +15,17 @@ export default async function handler(req: any, res: any) {
         const response = req.body.response
         await fetch(
             `${apiUrl}/api/v1/verification-request/${id}?response=${response}`,
-            { method: 'PUT', headers: { 'X-API-Key': apiKey, Authorization: `Bearer ${token}` } }
+            {
+                method: 'PUT',
+                headers: {
+                    'X-API-Key': apiKey,
+                    Authorization: `Bearer ${token}`,
+                },
+            },
         )
 
         res.status(200).json({ message: 'success' })
     } catch (e) {
         res.status(400).json(e)
     }
-} 
+}

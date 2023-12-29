@@ -1,6 +1,6 @@
 import React from 'react'
 import { render, screen } from '@testing-library/react'
-import Home from '../src/app/page'
+import Home from '../../src/app/page'
 
 describe('Page', () => {
     it('renders', () => {
@@ -10,4 +10,4 @@ describe('Page', () => {
         expect(screen.getByTestId('google-play')).toBeTruthy()
         expect(screen.getByTestId('bmc-button')).toBeTruthy()
     })
-});
+})

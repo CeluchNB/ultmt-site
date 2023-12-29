@@ -1,6 +1,6 @@
 import React from 'react'
 import { render, screen } from '@testing-library/react'
-import DeleteAccount from '../pages/delete-account'
+import DeleteAccount from '../../pages/delete-account'
 import fetchMock from 'jest-fetch-mock'
 
 describe('DeleteAccount', () => {

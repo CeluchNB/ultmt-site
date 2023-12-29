@@ -9,5 +9,5 @@ describe('Navigation', () => {
         expect(screen.getByText('The Ultmt App')).toBeTruthy()
         expect(screen.getByText('Privacy')).toBeTruthy()
         expect(screen.getByText('Delete Account')).toBeTruthy()
-    });
-});
+    })
+})
