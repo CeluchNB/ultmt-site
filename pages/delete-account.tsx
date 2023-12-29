@@ -3,7 +3,6 @@ import Link from 'next/link'
 import { useState } from 'react'
 
 export default function DeleteAccount() {
-
     const [statusText, setStatusText] = useState('')
     const [statusTextColor, setStatusTextColor] = useState('#00ff00')
 
@@ -24,7 +23,7 @@ export default function DeleteAccount() {
             body: jsonData,
         }
         const response = await fetch('/api/delete-account', options)
-        const result = await response.json();
+        const result = await response.json()
 
         setStatusText(result.message)
         if (response.status === 200) {
@@ -46,12 +45,35 @@ export default function DeleteAccount() {
                         <input id="username" name="username" type="text" />
                         <label htmlFor="password">Password</label>
                         <input id="password" name="password" type="password" />
-                        <button style={{ color: 'white', backgroundColor: 'red', marginTop: 5, borderRadius: 4, width: '100%' }}>Delete</button>
+                        <button
+                            style={{
+                                color: 'white',
+                                backgroundColor: 'red',
+                                marginTop: 5,
+                                borderRadius: 4,
+                                width: '100%',
+                            }}
+                        >
+                            Delete
+                        </button>
                     </form>
                 </div>
                 <p style={{ color: statusTextColor }}>{statusText}</p>
-                <p className="m-1">Deleting your account removes your data immediately, but your name will still appear on games and statistics as if you were added as a guest.</p>
-                <p className="m-1">Need more help? Email <Link style={{ margin: 0 }} href="mailto:developer@theultmtapp.com" className="link">developer@theultmtapp.com</Link></p>
+                <p className="m-1">
+                    Deleting your account removes your data immediately, but
+                    your name will still appear on games and statistics as if
+                    you were added as a guest.
+                </p>
+                <p className="m-1">
+                    Need more help? Email{' '}
+                    <Link
+                        style={{ margin: 0 }}
+                        href="mailto:developer@theultmtapp.com"
+                        className="link"
+                    >
+                        developer@theultmtapp.com
+                    </Link>
+                </p>
             </div>
         </div>
     )
