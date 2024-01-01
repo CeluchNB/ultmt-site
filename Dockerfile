@@ -1,5 +1,5 @@
 # base image
-FROM node:18.16
+FROM node:20-slim
 
 # Create and change to the app directory.
 WORKDIR /usr/app
