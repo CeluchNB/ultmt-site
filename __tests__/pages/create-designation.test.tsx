@@ -1,6 +1,9 @@
+/**
+ * @jest-environment jsdom
+ */
 import React from 'react'
 import { render, screen } from '@testing-library/react'
-import CreateDesignation from '../../pages/admin/create-designation'
+import CreateDesignation from '../../src/app/admin/create-designation/page'
 
 describe('CreateDesignation', () => {
     it('renders correctly', () => {

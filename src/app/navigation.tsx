@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 import Link from 'next/link'
 
 export default function Navigation() {
@@ -12,6 +13,9 @@ export default function Navigation() {
                     style={{ borderRadius: 30, maxHeight: 60 }}
                 />
                 <h1 className="ml-4 mr-0 sm:mr-4">The Ultmt App</h1>
+            </Link>
+            <Link className="link m-1 sm:m-4" href="/user-guide">
+                User Guide
             </Link>
             <Link className="link m-1 sm:m-4" href="/privacy">
                 Privacy

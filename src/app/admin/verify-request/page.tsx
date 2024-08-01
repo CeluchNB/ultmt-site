@@ -1,3 +1,4 @@
+'use client'
 import Navigation from '@/app/navigation'
 import { useSearchParams } from 'next/navigation'
 import { useState } from 'react'

@@ -1,6 +1,9 @@
+/**
+ * @jest-environment jsdom
+ */
 import React from 'react'
 import { render, screen } from '@testing-library/react'
-import VerifyRequest from '../../pages/admin/verify-request'
+import VerifyRequest from '../../src/app/admin/verify-request/page'
 import fetchMock from 'jest-fetch-mock'
 
 describe('VerifyRequest', () => {
