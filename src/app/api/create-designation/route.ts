@@ -1,4 +1,5 @@
 import { login } from '@/utils/network'
+import { NextResponse } from 'next/server'
 
 export async function POST(req: Request) {
     try {
@@ -24,8 +25,11 @@ export async function POST(req: Request) {
 
         const body = await response.json()
 
-        return Response.json({ designation: body.designation }, { status: 201 })
+        return NextResponse.json(
+            { designation: body.designation },
+            { status: 201 },
+        )
     } catch (e) {
-        return Response.json(e, { status: 400 })
+        return NextResponse.json(e, { status: 400 })
     }
 }

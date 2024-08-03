@@ -1,4 +1,5 @@
 import { login } from '@/utils/network'
+import { NextResponse } from 'next/server'
 
 export async function POST(req: Request) {
     try {
@@ -25,8 +26,8 @@ export async function POST(req: Request) {
             },
         )
 
-        return Response.json({ message: 'success' })
+        return NextResponse.json({ message: 'success' })
     } catch (e) {
-        return Response.json(e, { status: 400 })
+        return NextResponse.json(e, { status: 400 })
     }
 }
