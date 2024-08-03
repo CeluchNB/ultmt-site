@@ -1,6 +1,6 @@
 import { login } from '@/utils/network'
 
-export default async function POST(req: Request) {
+export async function POST(req: Request) {
     try {
         const apiUrl = process.env.API_URL
         const apiKey = process.env.API_KEY ?? ''
