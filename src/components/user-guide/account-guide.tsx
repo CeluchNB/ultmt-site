@@ -4,7 +4,7 @@ const GUIDE_SECTIONS = {
     LOGIN_SCREEN: {
         url: 'https://storage.googleapis.com/ultmt-site-images/login-screen.png',
         description:
-            "To make your own account, navigate to the 'Account' tab and click 'Create Account'",
+            'To make your own account, navigate to the "Account" tab and click "Create Account"',
     },
     CREATE_ACCOUNT: {
         url: 'https://storage.googleapis.com/ultmt-site-images/create-account.png',
@@ -19,12 +19,17 @@ const GUIDE_SECTIONS = {
     SETTINGS: {
         url: 'https://storage.googleapis.com/ultmt-site-images/settings.png',
         description:
-            "Edit settings by clicking 'Settings' in the top right corner of the Profile screen",
+            'Edit settings by clicking "Settings" in the top right corner of the Profile screen',
     },
-    REQUESTS: {
+    MANAGE_REQUESTS: {
         url: 'https://storage.googleapis.com/ultmt-site-images/manage-requests-from-teams.png',
         description:
-            "Respond to roster requests from teams by clicking 'Requests' in the top right corner of the Profile screen. You can request teams by clicking the '+' button next to 'Req",
+            'Respond to roster requests from teams by clicking "Requests" in the top right corner of the Profile screen. You can request teams by clicking the "+" button next to "Requests"',
+    },
+    REQUEST_TEAM: {
+        url: 'https://storage.googleapis.com/ultmt-site-images/request-join-team.png',
+        description:
+            'Search for teams to your request, or select "Join by Code" and enter the code shared by the team manager.',
     },
 }
 
@@ -36,10 +41,12 @@ export const AccountGuide = () => {
             </span>
             <ImageWithDescription {...GUIDE_SECTIONS.LOGIN_SCREEN} />
             <ImageWithDescription {...GUIDE_SECTIONS.CREATE_ACCOUNT} />
+            <span className="text-xl text-ultmtblue mb-1">Teams</span>
+            <ImageWithDescription {...GUIDE_SECTIONS.MANAGE_REQUESTS} />
+            <ImageWithDescription {...GUIDE_SECTIONS.REQUEST_TEAM} />
             <span className="text-xl text-ultmtblue mb-1">Account Actions</span>
             <ImageWithDescription {...GUIDE_SECTIONS.PROFILE_SCREEN} />
             <ImageWithDescription {...GUIDE_SECTIONS.SETTINGS} />
-            <ImageWithDescription {...GUIDE_SECTIONS.REQUESTS} />
         </div>
     )
 }
