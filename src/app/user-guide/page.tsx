@@ -1,5 +1,14 @@
+'use client'
 import Navigation from '@/app/navigation'
+import { AccountGuide } from '@/components/user-guide/account-guide'
+import { Dropdown } from '@/components/user-guide/dropdown'
+import { GamePlay } from '@/components/user-guide/game-play'
+import { Guests } from '@/components/user-guide/guests'
 import ImageWithDescription from '@/components/user-guide/image-with-description'
+import { ManageTeams } from '@/components/user-guide/manage-teams'
+import { useEffect, useRef, useState } from 'react'
+
+const OPTIONS = ['User Accounts', 'Manage Teams', 'Game Play', 'Guests']
 
 const GUIDE_SECTIONS = {
     USER_ACCOUNTS: {
@@ -46,55 +55,24 @@ const GUIDE_SECTIONS = {
 }
 
 export default function UserGuide() {
+    const [selected, setSelected] = useState(OPTIONS[0])
+
     return (
         <div>
             <Navigation />
             <div>
-                <div id="side-navigation"></div>
-                <div className="flex items-center text-center">
+                <div className="flex items-center ml-4">
                     <div>
-                        <span className="text-2xl text-ultmtyellow ">
-                            User Accounts
-                        </span>
-                        <span className="text-xl text-ultmtblue">
-                            Creating an Account
-                        </span>
-                        <ImageWithDescription
-                            {...GUIDE_SECTIONS.USER_ACCOUNTS.LOGIN_SCREEN}
+                        <Dropdown
+                            selected={selected}
+                            setSelected={setSelected}
+                            options={OPTIONS}
                         />
-                        <ImageWithDescription
-                            {...GUIDE_SECTIONS.USER_ACCOUNTS.CREATE_ACCOUNT}
-                        />
-                        <span className="text-xl text-ultmtblue">
-                            Account Actions
-                        </span>
-                        <ImageWithDescription
-                            {...GUIDE_SECTIONS.USER_ACCOUNTS.PROFILE_SCREEN}
-                        />
-                        <ImageWithDescription
-                            {...GUIDE_SECTIONS.USER_ACCOUNTS.SETTINGS}
-                        />
-                        <ImageWithDescription
-                            {...GUIDE_SECTIONS.USER_ACCOUNTS.REQUESTS}
-                        />
+                        {selected === OPTIONS[0] && <AccountGuide />}
+                        {selected === OPTIONS[1] && <ManageTeams />}
+                        {selected === OPTIONS[2] && <GamePlay />}
+                        {selected === OPTIONS[3] && <Guests />}
                     </div>
-                    <div>
-                        <span className="text-2xl text-ultmtyellow">
-                            Managing Teams
-                        </span>
-                        <ImageWithDescription
-                            {...GUIDE_SECTIONS.TEAM_MANAGEMENT.CREATE_TEAM}
-                        />
-                        <ImageWithDescription
-                            {...GUIDE_SECTIONS.TEAM_MANAGEMENT.MANAGE_TEAMS}
-                        />
-                    </div>
-                    {/* <div>
-                        <span>Game Play</span>
-                    </div>
-                    <div>
-                        <span>Guests</span>
-                    </div> */}
                 </div>
             </div>
         </div>
