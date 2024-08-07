@@ -36,14 +36,16 @@ const GUIDE_SECTIONS = {
 export const ManageTeams = () => {
     return (
         <div>
-            <span className="text-xl text-ultmtblue">Creating a Team</span>
+            <span className="text-xl text-ultmtblue mb-1">Creating a Team</span>
             <ImageWithDescription {...GUIDE_SECTIONS.CREATE_TEAM} />
-            <span className="text-xl text-ultmtblue">Player Management</span>
+            <span className="text-xl text-ultmtblue mb-1">
+                Player Management
+            </span>
             <ImageWithDescription {...GUIDE_SECTIONS.MANAGE_TEAM} />
             <ImageWithDescription {...GUIDE_SECTIONS.ADD_PLAYERS} />
             <ImageWithDescription {...GUIDE_SECTIONS.JOIN_CODE} />
             <ImageWithDescription {...GUIDE_SECTIONS.MANAGE_REQUESTS} />
-            <span className="text-xl text-ultmtblue">Other Actions</span>
+            <span className="text-xl text-ultmtblue mb-1">Other Actions</span>
             <ImageWithDescription {...GUIDE_SECTIONS.OTHER_ACTIONS} />
         </div>
     )
