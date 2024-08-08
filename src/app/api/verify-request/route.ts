@@ -1,18 +1,20 @@
 import { login } from '@/utils/network'
+import { NextResponse } from 'next/server'
 
-export default async function handler(req: any, res: any) {
+export async function POST(req: Request) {
     try {
         const apiUrl = process.env.API_URL
         const apiKey = process.env.API_KEY ?? ''
 
+        const data = await req.json()
+        const { password, verificationId, response } = data
         const user = {
             email: 'noah.celuch@gmail.com',
-            password: req.body.password,
+            password: password,
         }
         const token = await login(user)
 
-        const id = req.body.verificationId
-        const response = req.body.response
+        const id = verificationId
         await fetch(
             `${apiUrl}/api/v1/verification-request/${id}?response=${response}`,
             {
@@ -24,8 +26,8 @@ export default async function handler(req: any, res: any) {
             },
         )
 
-        res.status(200).json({ message: 'success' })
+        return NextResponse.json({ message: 'success' })
     } catch (e) {
-        res.status(400).json(e)
+        return NextResponse.json(e, { status: 400 })
     }
 }

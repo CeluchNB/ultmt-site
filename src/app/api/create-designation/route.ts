@@ -1,11 +1,13 @@
 import { login } from '@/utils/network'
+import { NextResponse } from 'next/server'
 
-export default async function handler(req: any, res: any) {
+export async function POST(req: Request) {
     try {
         const apiUrl = process.env.API_URL
         const apiKey = process.env.API_KEY ?? ''
 
-        const { description, abbreviation, password } = req.body
+        const data = await req.json()
+        const { description, abbreviation, password } = data
 
         const token = await login({ email: 'noah.celuch@gmail.com', password })
 
@@ -23,8 +25,11 @@ export default async function handler(req: any, res: any) {
 
         const body = await response.json()
 
-        res.status(201).json({ designation: body.designation })
+        return NextResponse.json(
+            { designation: body.designation },
+            { status: 201 },
+        )
     } catch (e) {
-        res.status(400).json(e)
+        return NextResponse.json(e, { status: 400 })
     }
 }

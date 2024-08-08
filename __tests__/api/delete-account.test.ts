@@ -1,5 +1,6 @@
-import deleteAccount from '../../pages/api/delete-account'
+import { POST } from '../../src/app/api/delete-account/route'
 import fetchMock from 'jest-fetch-mock'
+import { ReadableStream } from 'stream/web'
 
 describe('Delete Account API', () => {
     beforeAll(() => {
@@ -10,35 +11,34 @@ describe('Delete Account API', () => {
     })
 
     it('handles success', async () => {
-        const json = jest.fn()
-        const res = {
-            status: jest.fn().mockReturnValue({ json }),
-        }
         fetchMock.mockResponseOnce(() =>
             Promise.resolve({ body: '{ "tokens": { "access": "token" }}' }),
         )
-        await deleteAccount(
-            { body: { email: 'noah', password: 'Pass1234!' } },
-            res,
-        )
 
-        expect(res.status).toHaveBeenCalledWith(200)
-        expect(json).toHaveBeenCalled()
+        const reqObject = {
+            json: async () => ({ email: 'noah', password: 'Pass1234!' }),
+        }
+
+        const res = await POST(reqObject as any)
+
+        expect(res.status).toBe(200)
+        const data = await res.json()
+        expect(data).toEqual({
+            message: 'Your account was successfully deleted.',
+        })
     })
 
     it('handles failure', async () => {
-        const json = jest.fn()
-        const res = {
-            status: jest.fn().mockReturnValue({ json }),
-        }
         fetchMock.mockResponseOnce(() => Promise.resolve({ body: 'badjson' }))
 
-        await deleteAccount(
-            { body: { email: 'noah', password: 'Pass1234!' } },
-            res,
-        )
+        const reqObject = {
+            json: async () => ({ email: 'noah', password: 'Pass1234!' }),
+        }
+        const res = await POST(reqObject as any)
 
-        expect(res.status).toHaveBeenCalledWith(400)
-        expect(json).toHaveBeenCalled()
+        expect(res.status).toBe(400)
+        expect(await res.json()).toEqual({
+            message: 'An error occurred. Please try again.',
+        })
     })
 })
