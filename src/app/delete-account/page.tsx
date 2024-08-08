@@ -1,3 +1,4 @@
+'use client'
 import Navigation from '@/app/navigation'
 import Link from 'next/link'
 import { useState } from 'react'
