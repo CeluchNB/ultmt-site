@@ -19,17 +19,17 @@ const GUIDE_SECTIONS = {
     GAME_OPTIONS: {
         url: 'https://storage.googleapis.com/ultmt-site-images/game-play/create-game-options.png',
         description:
-            'You can then specify the options of your game. Notably, you can create an "offline" game. This will allow games to be created without any network service. You can push these games when you have service again.',
+            'You can then specify the options of your game. Notably, you can create an offline game. This will allow games to be created without any network service. You can push these games when you have service again. Offline games cannot have the second team join.',
     },
     FIRST_POINT: {
         url: 'https://storage.googleapis.com/ultmt-site-images/game-play/first-point.png',
         description:
-            'After creating a game, you will choose whether you are pulling or receiving to start. You also can see the "Join code" which is how the other team is able to join your game.',
+            'After creating a game, you will choose whether you are pulling or receiving to start. You also can see the "Join code" which a seceond team can enter to join your game.',
     },
     SELECT_PLAYERS: {
         url: 'https://storage.googleapis.com/ultmt-site-images/game-play/select-players.png',
         description:
-            'Each point starts with selecting players. You can select the amount of players specified in the "Players per point" option on the "Create Game" screen.',
+            'Each point starts by selecting the active players. You can only select the amount of players specified in the "Players per point" option on the "Create Game" screen.',
     },
     PULL_ACTION: {
         url: 'https://storage.googleapis.com/ultmt-site-images/game-play/pull-action.png',
@@ -54,7 +54,7 @@ const GUIDE_SECTIONS = {
     SEARCH_TOURNAMENTS: {
         url: 'https://storage.googleapis.com/ultmt-site-images/game-play/search-tournaments.png',
         description:
-            'Tournaments have very limited functionality; they are only for display purposes currently. However, you can search for tournaments created by you or other users from the "Create Game" screen.',
+            'Tournaments have very limited functionality; they are only for display purposes currently. However, you can search for tournaments created by you or other users by selecting "Tournaments" on "Create Game" screen.',
     },
     CREATE_TOURNAMENTS: {
         url: 'https://storage.googleapis.com/ultmt-site-images/game-play/create-tournament.png',

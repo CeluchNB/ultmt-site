@@ -4,12 +4,12 @@ const GUIDE_SECTIONS = {
     CREATE_TEAM: {
         url: 'https://storage.googleapis.com/ultmt-site-images/create-team.png',
         description:
-            "Create a team by clicking the '+' button next to 'Teams' on the Profile screen. You must include a unique team handle; think if this as a username for your team.",
+            "Create a team by clicking the '+' button next to 'Teams' on the Profile screen. You must include a unique team handle; think of this as a username for your team.",
     },
     MANAGE_TEAM: {
         url: 'https://storage.googleapis.com/ultmt-site-images/manage-team-screen.png',
         description:
-            'You can view the players and managers of your team on the "Manage Team" page. You can get here by clicking on the team you managed when it has the "Managed" label underneath it.',
+            'You can view the players and managers of your team on the "Manage Team" page. You can get here by clicking on the team you manage with the "Managed" label underneath it.',
     },
     ADD_PLAYERS: {
         url: 'https://storage.googleapis.com/ultmt-site-images/add-players-to-team.png',

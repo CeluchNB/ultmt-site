@@ -41,12 +41,12 @@ export const AccountGuide = () => {
             </span>
             <ImageWithDescription {...GUIDE_SECTIONS.LOGIN_SCREEN} />
             <ImageWithDescription {...GUIDE_SECTIONS.CREATE_ACCOUNT} />
-            <span className="text-xl text-ultmtblue mb-1">Teams</span>
-            <ImageWithDescription {...GUIDE_SECTIONS.MANAGE_REQUESTS} />
-            <ImageWithDescription {...GUIDE_SECTIONS.REQUEST_TEAM} />
             <span className="text-xl text-ultmtblue mb-1">Account Actions</span>
             <ImageWithDescription {...GUIDE_SECTIONS.PROFILE_SCREEN} />
             <ImageWithDescription {...GUIDE_SECTIONS.SETTINGS} />
+            <span className="text-xl text-ultmtblue mb-1">Teams</span>
+            <ImageWithDescription {...GUIDE_SECTIONS.MANAGE_REQUESTS} />
+            <ImageWithDescription {...GUIDE_SECTIONS.REQUEST_TEAM} />
         </div>
     )
 }
