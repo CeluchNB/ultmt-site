@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 import Image from 'next/image'
 
 const ImageWithDescription = ({
@@ -9,8 +10,8 @@ const ImageWithDescription = ({
 }) => {
     return (
         <div className="mb-4">
-            <Image
-                alt="Filled in create account screen"
+            <img
+                alt={description}
                 src={url}
                 width={160}
                 height={400}
