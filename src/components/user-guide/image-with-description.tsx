@@ -10,6 +10,7 @@ const ImageWithDescription = ({
     return (
         <div className="mb-4">
             <Image
+                priority={false}
                 alt="Filled in create account screen"
                 src={url}
                 width={160}
